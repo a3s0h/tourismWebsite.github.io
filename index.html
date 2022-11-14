@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>UK Tourism</title>
+  <script src="https://kit.fontawesome.com/e25f984ccd.js" crossorigin="anonymous"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@700&family=Chakra+Petch:ital,wght@1,700&family=Creepster&family=Dancing+Script:wght@700&family=Fredoka+One&family=Mali:ital,wght@1,700&family=Nosifer&family=Pacifico&family=Press+Start+2P&family=Public+Sans:wght@100&family=Roboto+Mono:wght@100&display=swap"
+    rel="stylesheet">
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html{
+    scroll-behavior: smooth;
+}
+    .btn-primary {
+      border-radius: 30px;
+      font-size: 20px;
+    }
+
+    .d-grid:hover .btn-primary {
+      background-color: #ff004f;
+    }
+
+    #about {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0)20%, rgba(84, 76, 76, 0.5)70%), url('images/bg2.jpg');
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .box1 {
+      max-width: 500px;
+      box-shadow: 0 10px 70px -10px black;
+      border: none;
+      /* margin-top: 5%; */
+      text-align: center;
+      /* margin-left: 200px; */
+      height: 400px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("images/nanital.jpg");
+      transition: transform 0.5s ease-out;
+      border-radius: 10px;
+    }
+
+    .box2 {
+      max-width: 500px;
+      box-shadow: 0 10px 70px -10px black;
+      border: none;
+      /* margin-top: 5%; */
+      text-align: center;
+      /* margin-right: 200px; */
+      height: 400px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("images/musoorie.jpg");
+      transition: transform 0.5s ease-out;
+      border-radius: 10px;
+    }
+
+    .box p {
+      margin-top: 50px;
+      color: white;
+      font-size: 18px;
+      font-weight: 800px;
+      font-family: 'Abril Fatface', cursive;
+
+
+    }
+
+    .box h1 {
+      font-weight: 800px;
+      font-size: 60px;
+      color: white;
+      font-family: 'Abril Fatface', cursive;
+
+    }
+
+    /* .box1:hover p{
+      display: none;
+    } */
+    .box:hover {
+
+      transform: scale(1.1);
+    }
+
+    /* .box1:hover h1{
+      display: none;
+    } */
+    #tag-line {
+      color: rgb(255, 255, 255);
+      font-size: 25px;
+      text-align: center;
+      margin-top: -20px;
+      font-weight: 500px;
+      font-family: 'Abril Fatface', cursive;
+    }
+
+    .big-box {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+
+    }
+
+    .quote {
+      color: rgb(255, 255, 255);
+      font-size: 25px;
+      text-align: center;
+      margin-top: 50px;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .quote p span {
+      color: #07f853;
+    }
+
+    #detail {
+      width: 100%;
+      height: 100vh;
+    }
+    #detail h1{
+      text-align: center;
+      font-family: 'Roboto Slab', serif;
+      margin-top: 27px;
+    }
+    .container{
+      padding: 10% 10%;
+      height: 670px;
+      margin-top: 20px;
+      background-color: rgb(234, 230, 226);
+    }
+    .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 40px;
+      margin-top: 50px;
+      align-items: center;
+    }
+
+    .even-box {
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      width: 300px;
+      height: 200px;
+      background-color: rgb(255, 255, 255);
+    }
+    .even-box a{
+      font-size: 100px;
+      color: #ffc527;
+      padding: 0 100px;
+    }
+    .layer {
+      width: 100%;
+      height: 0;
+      background: linear-gradient(rgba(255, 255, 255, 0.6), #ffffff90);
+      border-radius: 10px;
+      position: absolute;
+      left: 0;
+      bottom: -20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 40px;
+      text-align: center;
+      font-size: 14px;
+      transition: height 0.5s;
+    }
+
+    .layer {
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+.layer h3{
+  color: #ffc527;
+}
+    .even-box:hover .layer {
+      height: 100%;
+    }
+    .even-box:hover a{
+      opacity: 0.4;
+    }
+    .container h2{
+      margin-top: -90px;
+      /* align-items: center; */
+      text-align: center;
+      font-size: 60px;
+      font-weight: 800px;
+      font-family: 'Dancing Script', cursive;
+    }
+    /*-----contact-----------*/
+.contact-left{
+    flex-basis: 35%;
+
+}
+.contact-right{
+    flex-basis: 60%;
+    
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+
+.contact-right form{
+    width: 100%;
+
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size:18px ;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 30px;
+    color: white;
+}
+.copyright i{
+    color: #ff004f;
+}
+
+
+  </style>
+
+</head>
+
+<body>
+  <div id="header" class="contain"
+    style="background-image: linear-gradient(45deg,rgba(255, 0, 0,0.5)20%,rgba(0, 174, 255, 0.5)70%) , url('images/backimghe.jpg');width: 100vw; height: 100vh;background-size: cover;background-position: center;background-repeat: no-repeat;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          style="font-weight: 800;font-family: 'Sono', sans-serif;font-size: 30px;">UK-T</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="sidemenu">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#header">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Places</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#detail">Our_services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+
+    </nav>
+    <div class="content" style="margin: 250px 400px;">
+      <h1
+        style="color: white;font-family: 'Dancing Script', cursive;font-size: 120px; text-align: center;margin-top: -70px;">
+        Ghumo Ghumao</h1>
+      <p style="color: white;font-family: 'Dancing Script', cursive;font-size: 50px; margin-left: 250px;">UK travels</p>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="button">See Gallary</button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- about section-->
+  <div id="about">
+    <h1 style="color: #07f853;font-family: 'Dancing Script', cursive;font-size: 120px; text-align: center;">Featured
+      Places
+      <hr style="width:800px;margin-left:400px; ">
+    </h1>
+    <p id="tag-line">Best out of Best ;)</p>
+    <div class="big-box">
+      <div class="box1 box">
+        <h1>Nanital</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea reiciendis veniam voluptatum quisquam, odio
+          pariatur rerum unde sunt dolore accusamus facere possimus? Consequuntur quaerat, provident suscipit dolor
+          dolorum fugit minus consectetur iusto, eius aperiam assumenda cum repellendus! Autem eligendi debitis odio?
+          Corporis sapiente magni repellendus natus maxime! Maxime, maiores vitae.</p>
+      </div>
+      <div class="box2 box">
+        <h1>Musoorie</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea reiciendis veniam voluptatum quisquam, odio
+          pariatur rerum unde sunt dolore accusamus facere possimus? Consequuntur quaerat, provident suscipit dolor
+          dolorum fugit minus consectetur iusto, eius aperiam assumenda cum repellendus! Autem eligendi debitis odio?
+          Corporis sapiente magni repellendus natus maxime! Maxime, maiores vitae.</p>
+      </div>
+    </div>
+    <div class="quote">
+      <p>“Better to <span>see something</span> once than to hear about it a <span>thousand times</span>.”</p>
+    </div>
+  </div>
+
+
+  <!-- about us -->
+  <div id="detail">
+    <h1>Our Services</h1>
+    <div class="container">
+      <h2>Travel</h2>
+      <div class="list">
+        
+        <div class="even-box">
+          <div class="content">
+            <a href=""><i class="fa-solid fa-hotel"></i></a>
+            <div class="layer">
+              <h3>Book Hotel</h3>
+            </div>
+
+          </div>
+        </div>
+        <div class="even-box">
+          <div class="content">
+            <a href=""><i class="fa-solid fa-plane-departure"></i></a>
+            <div class="layer">
+              <h3>Fly</h3>
+            </div>
+          </div>
+        </div>
+        <div class="even-box">
+          <div class="content">
+            <a href=""><i class="fa-solid fa-umbrella-beach"></i></a>
+            <div class="layer">
+              <h3>Summer Tours</h3>
+            </div>
+          </div>
+        </div>
+        <div class="even-box">
+          <div class="content">
+            <a href=""><i class="fa-solid fa-truck-medical"></i></a>
+            <div class="layer">
+              <h3>Medical Insurance</h3>
+            </div>
+          </div>
+        </div>
+        <div class="even-box">
+          <div class="content">
+            <a href=""><i class="fa-solid fa-person-snowboarding"></i></a>
+            <div class="layer">
+              <h3>Sports Tour</h3>
+            </div>
+          </div>
+        </div>
+        <div class="even-box">
+          <div class="content">
+            <a href=""><i class="fa-solid fa-mountain"></i></a>
+            <div class="layer">
+              <h3>Adventure tours</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- contact -->
+
+  <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subTitle">Contact Us</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> uktravels7630@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i> 999990000</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="#" class="btn btn2"></a>
+            </div>
+            <div class="contact-right">
+                <form >
+                    <input type="text" name="Name" placeholder="Yor Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message"   rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright $c Nishant. Made width <i class="fa-solid fa-heart"></i> by heart ;)</p>
+    </div>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+    <script>
+
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu(){
+          sidemenu.style.right = "0";
+      }
+      function closemenu(){
+          sidemenu.style.right = "-200px";
+      }
+      
+
+  </script>
+
+</body>
+
+</html>
